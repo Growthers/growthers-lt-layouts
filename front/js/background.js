@@ -1,11 +1,11 @@
 const Sleep = (ms) => new Promise((r) => setTimeout(r,ms))
 
-async function drawBackGround(arg) {
+async function drawBackGround() {
   const backgroundContainer = document.getElementById("backGround");
 
-  for (let i=0; i<120; i++) {
+  for (let i=0; i<140; i++) {
     // 位置決め
-    let [x,y,size,speed] = [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100) + arg,0,""]
+    let [x,y,size,speed] = [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100) ,0,""]
     for (;;){
       const rand = Math.floor(Math.random() * 100);
       if (rand > 12 || rand < 2) {
@@ -35,4 +35,4 @@ async function drawBackGround(arg) {
   }
 }
 
-window.onload = drawBackGround(0);
+window.onload = drawBackGround();
