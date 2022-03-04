@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>LT Management Console</title>
+    <script src="https://cdn.tailwindcss.com" async></script>
+    <script src="js/index.js" type="module"></script>
+    <script src="js/lib/obs-websocket.js" type="application/javascript"></script>
+</head>
+<body>
+
+    <div>
+        <h1 class="text-4xl text-green-700 text-center font-semibold">共同開発鯖 LT 管理コンソール</h1>
+    </div>
+
+    <div>
+        <input type="file" id="upload" accept="application/json">
+        <button id="loadbutton" class="bg-indigo-700 text-white py-2 px-4 rounded">Load</button>
+    </div>
+
+    <div class="h-screen w-screen flex flex-wrap flex-row">
+        <div class="w-1/3 h-full bg-red h-30 border-solid border-4 border-gray-600">
+            <div>
+                <!-- 現在時刻 -->
+                <p id="clock" class="text-5xl">00:00</p>
+            </div>
+
+            <div>
+                <!-- 配信状態 -->
+                <p id="status" class="text-3xl">Loading...</p>
+            </div>
+
+            <div>
+                <p id="streamingDuration">00:00</p>
+            </div>
+
+            <div>
+                <p class="text-2xl">Event Name:</p>
+                <p id="eventTitle" class="text-2xl">Loading...</p>
+                <p class="text-2xl">Event Start Time:</p>
+                <p id="eventStartTime" class="text-3xl">Loading...</p>
+            </div>
+
+            <div>
+                <button class="bg-green-700 text-white py-2 px-4 rounded" id="backButton">前</button>
+                <button class="bg-green-700 text-white py-2 px-4 rounded" id="nextButton">次</button>
+                <button class="bg-red-700 text-white py-2 px-4 rounded" id="clear">イベントデータキャッシュを破棄</button>
+                <button class="bg-yellow-700 text-white py-2 px-4 rounded" id="update">配信画面の表示更新</button>
+            </div>
+
+            <div>
+                <div>
+                    <p>現在のLT</p>
+                    <p id="nowLtTitle">タイトル: Loading...</p>
+                    <p id="nowLtSpeaker">発表者: Loading...</p>
+                    <p id="nowLtTimeFrame">発表枠: Loading...</p>
+                    <p id="nowLtTime">開始/終了時間(予定): Loading... | Loading...</p>
+                    <p id="nowLtCalculatedTime">開始/終了時間(実際): Loading... | Loading...</p>
+                </div>
+
+                <div>
+                    <p>次のLT</p>
+                    <p id="nextLtTitle">タイトル: Loading...</p>
+                    <p id="nextLtSpeaker">発表者: Loading...</p>
+                    <p id="nextLtTimeFrame">発表枠: Loading...</p>
+                    <p id="nextLtTime">開始/終了時間(予定): Loading... | Loading...</p>
+                    <p id="nextLtCalculatedTime">開始/終了時間(実際): Loading... | Loading...</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="ltList" class="w-1/3 h-screen bg-red h-30 border-solid border-4 border-gray-600 overflow-scroll">
+        </div>
+
+        <div class="w-1/3 h-screen bg-red h-30 border-solid border-4 border-gray-600 overflow-scroll">
+
+        </div>
+    </div>
+
+</body>
+</html>

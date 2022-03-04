@@ -4,7 +4,7 @@ html {
     background-color: #080C2B;
 }
 
-#body {
+body {
     height: 1080px;
     width: 1920px;
 }
@@ -32,7 +32,7 @@ html {
 @keyframes backgroundAnimation {
     0% {
         /*transform: scale(1);*/
-        opacity: 1;
+        opacity: 2;
     }
     50% {
         /*transform: scale(1.2);*/

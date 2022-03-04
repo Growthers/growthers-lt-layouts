@@ -1,0 +1,5 @@
+:80 {
+    root * C:/Users/laminne/Documents/growthers-lt-layouts/
+    file_server browse
+    header / Content-Type application/json
+}
